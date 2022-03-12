@@ -2,10 +2,10 @@ var password = require('../password.js');
 
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-    host : password.host,
-    user : password.user,
-    password : password.password,
-    database : password.database
+    host : password.db.host,
+    user : password.db.user,
+    password : password.db.password,
+    database : password.db.database
 });
 
 connection.connect();
