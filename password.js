@@ -1,4 +1,6 @@
 module.exports = {
-  id:'password',
-  password:'password'
+  host : '',
+  user : '',
+  password : '',
+  database : ''
 }
