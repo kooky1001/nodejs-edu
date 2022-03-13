@@ -9,4 +9,4 @@ connection.query('select * from topic', function(error, results, fields) {
     console.log(results);
 });
 connection.end();
-ssh.close();
+//ssh.close();
