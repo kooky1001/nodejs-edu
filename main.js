@@ -1,3 +1,16 @@
+const express = require('express');
+const app = express();
+var ssh = require('./lib/ssh');
+const topic = require('./lib/topic');
+
+app.get('/', function(req, res){
+  //res.send('test!!');
+  topic.home(req, res);
+});
+
+app.listen(3000);
+
+/*
 var http = require('http');
 var url = require('url');
 var ssh = require('./lib/ssh');
@@ -29,3 +42,4 @@ var app = http.createServer(function(request,response){
     }
 });
 app.listen(3000);
+*/
