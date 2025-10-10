@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const compression = require('compression');
-const ssh = require('./lib/ssh');
 
 // Routers
 var topicRouter = require('./routes/topics');

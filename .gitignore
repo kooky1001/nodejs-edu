@@ -1,5 +1,9 @@
 # Personal info
 /password.js
+.env
 
 # Dependency directories
 node_modules/
+
+# Editor
+.idea
