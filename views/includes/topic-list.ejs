@@ -1,0 +1,7 @@
+<div>
+    <ul>
+        <% for (let topic of topicList) { %>
+            <li><a href="/topic/<%= topic.id %>"><%= topic.title %></a></li>
+        <% } %>
+    </ul>
+</div>

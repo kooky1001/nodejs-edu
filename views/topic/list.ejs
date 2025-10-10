@@ -10,13 +10,7 @@
     <h1><a href="/">MAIN</a></h1>
 </div>
 
-<div>
-    <ul>
-        <% for (let topic of topicList) { %>
-            <li><a href="/topic/<%= topic.id %>"><%= topic.title %></a></li>
-        <% } %>
-    </ul>
-</div>
+<%- include('../includes/topic-list.ejs') %>
 
 <a href="/topic/create">create</a>
 
