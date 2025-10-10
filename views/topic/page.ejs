@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <a href="/auth/login">login</a>
+    <h1><a href="/">MAIN</a></h1>
+</div>
+
+<div>
+    <ul>
+        <% for (let topic of topicList) { %>
+            <li><a href="/topic/<%= topic.id %>"><%= topic.title %></a></li>
+        <% } %>
+    </ul>
+</div>
+
+<a href="/topic/create">create</a>
+<a href="/topic/update/<%= id %>">update</a>
+<form action="/topic/delete_process" method="post">
+    <input type="hidden" name="id" value="<%= id %>">
+    <input type="submit" value="delete">
+</form>
+
+<h2><%= title %></h2>
+<p><%= description %></p>
+<p>by <%= name %></p>
+
+</body>
+</html>

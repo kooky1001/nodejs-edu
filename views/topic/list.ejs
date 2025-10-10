@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <a href="/auth/login">login</a>
+    <h1><a href="/">MAIN</a></h1>
+</div>
+
+<div>
+    <ul>
+        <% for (let topic of topicList) { %>
+            <li><a href="/topic/<%= topic.id %>"><%= topic.title %></a></li>
+        <% } %>
+    </ul>
+</div>
+
+<a href="/topic/create">create</a>
+
+<h2><%= title %></h2>
+<p><%= description %></p>
+<image src="/images/coding.jpg" style="width:300px; display:block;"/>
+
+</body>
+</html>
