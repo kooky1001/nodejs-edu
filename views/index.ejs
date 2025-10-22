@@ -5,18 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-<div>
-    <a href="/auth/login">login</a>
-    <h1><a href="/">MAIN</a></h1>
-</div>
-
-<div>
-    <ul>
-        <% for (let board of boardList) { %>
-            <li><a href="/topic/<%= board.id %>"><%= board.title %></a></li>
-        <% } %>
-    </ul>
-</div>
+<%- include('../includes/nav.ejs') %>
+<%- include('../includes/topic-list.ejs') %>
 
 <a href="/topic/create">create</a>
 

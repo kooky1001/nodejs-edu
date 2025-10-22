@@ -1,0 +1,8 @@
+<div>
+    <% if (locals.user) { %>
+        <a href="/auth/login">logout</a> | <%= user.name %>님
+    <% } else { %>
+        <a href="/auth/login">login</a>
+    <% } %>
+    <h1><a href="/">MAIN</a></h1>
+</div>

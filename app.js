@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const compression = require('compression');
+var session = require('express-session')
+var FileStore = require('session-file-store')(session);
 
 // Routers
 var topicRouter = require('./routes/topics');
@@ -13,6 +15,13 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  store : new FileStore()
+}));
 
 app.use(logger('dev'));
 app.use(express.json());

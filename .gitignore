@@ -1,6 +1,7 @@
 # Personal info
 /password.js
 .env
+sessions/
 
 # Dependency directories
 node_modules/
