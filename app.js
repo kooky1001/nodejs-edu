@@ -3,8 +3,9 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const compression = require('compression');
-var session = require('express-session')
-var FileStore = require('session-file-store')(session);
+const session = require('express-session');
+const FileStore = require('session-file-store')(session);
+const passport = require('passport');
 
 // Routers
 var topicRouter = require('./routes/topics');
@@ -16,6 +17,12 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(compression());
+
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
@@ -23,11 +30,7 @@ app.use(session({
   store : new FileStore()
 }));
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(compression());
+app.use(passport.authenticate('session'));
 
 app.use('/topic', topicRouter);
 app.use('/auth', authRouter);
