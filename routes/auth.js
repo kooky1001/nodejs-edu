@@ -21,4 +21,11 @@ router.post('/login_process', function(req, res){
   }
 });
 
+router.post('/logout_process', function(req, res){
+  req.session.destroy((err) => {
+    if (err) throw err;
+    res.redirect('/');
+  });
+});
+
 module.exports = router;

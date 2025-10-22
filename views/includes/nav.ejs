@@ -1,6 +1,8 @@
 <div>
     <% if (locals.user) { %>
-        <a href="/auth/login">logout</a> | <%= user.name %>님
+        <form action="/auth/logout_process" method="post">
+            <button>logout</button> | <%= user.name %>님
+        </form>
     <% } else { %>
         <a href="/auth/login">login</a>
     <% } %>
