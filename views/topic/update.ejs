@@ -17,13 +17,6 @@
         <textarea name="description" placeholder="description"><%= topic.description %></textarea>
     </p>
     <p>
-        <select name='author'>
-            <% for(let author of authorList) { %>
-                <option value="<%= author.id %>" <%= (author.id === topic.member_id) ? 'selected' : '' %>><%= author.name %></option>
-            <% } %>
-        </select>
-    </p>
-    <p>
         <input type="submit">
     </p>
 </form>
