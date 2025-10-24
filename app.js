@@ -6,6 +6,7 @@ const compression = require('compression');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const passport = require('passport');
+const db = require('./lib/db');
 
 // Routers
 var topicRouter = require('./routes/topics');
@@ -31,6 +32,8 @@ app.use(session({
 }));
 
 app.use(passport.authenticate('session'));
+
+db.sync();
 
 app.use('/topic', topicRouter);
 app.use('/auth', authRouter);
