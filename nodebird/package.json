@@ -1,0 +1,29 @@
+{
+  "name": "nodebird",
+  "version": "1.0.0",
+  "description": "node sns",
+  "license": "ISC",
+  "author": "kooky",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.10.1",
+    "nunjucks": "^3.2.4",
+    "passport": "^0.7.0",
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
