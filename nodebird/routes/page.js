@@ -1,4 +1,9 @@
 const express = require("express");
+const {
+  renderProfile,
+  renderJoin,
+  renderMain,
+} = require("../controllers/page");
 
 const router = express.Router();
 
@@ -13,14 +18,8 @@ router.use((req, res, next) => {
 
 //라우터 마지막에 위치해 클라이언트에 응답을 보내는 미들웨어
 // 컨트롤러
-// router.get("/profile", renderProfile);
-// router.get("/join", renderJoin);
-router.get("/", (req, res, next) => {
-    try {
-        res.send('접속성공!!!');
-    } catch(e) {
-        next(e);
-    }
-});
+router.get("/profile", renderProfile);
+router.get("/join", renderJoin);
+router.get("/", renderMain);
 
 module.exports = router;
