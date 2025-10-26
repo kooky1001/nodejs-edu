@@ -1,4 +1,5 @@
 const express = require('express');
+const { isLoggedIn, isNotLoggedIn } = require('../middlewares');
 const {
   renderProfile,
   renderJoin,
@@ -18,8 +19,8 @@ router.use((req, res, next) => {
 
 //라우터 마지막에 위치해 클라이언트에 응답을 보내는 미들웨어
 // 컨트롤러
-router.get('/profile', renderProfile);
-router.get('/join', renderJoin);
+router.get('/profile', isLoggedIn, renderProfile);
+router.get('/join', isNotLoggedIn, renderJoin);
 router.get('/', renderMain);
 
 module.exports = router;

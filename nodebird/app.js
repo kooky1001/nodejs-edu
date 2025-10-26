@@ -56,7 +56,7 @@ app.use((req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
-console.error(err);
+  console.error(err);
   res.locals.message = err.message;
   res.locals.error = process.env.NODE_ENV !== 'production' ? err : {};
   res.status(err.status || 500);
