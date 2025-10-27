@@ -14,6 +14,15 @@ exports.uploadPost = async (req, res, next) => {
     });
     const hashtags = req.body.content.match(/#[^\s#]*/g);
     if (hashtags) {
+      
+      // 해쉬태그 여러개일 때 오류 발생 -> 수정필요
+      // hashtags.map(async tag => {
+      //   const result = await Hashtag.findOrCreate({
+      //     where: {title: tag.slice(1).toLowerCase()},
+      //   });
+      //   await post.addHashtag(result);
+      // });
+
       const result = await Promise.all(
         hashtags.map(tag => {
           return Hashtag.findOrCreate({
