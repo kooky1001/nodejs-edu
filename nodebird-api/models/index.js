@@ -4,6 +4,9 @@ const path = require('path');
 // const env = process.env.NODE_ENV || 'development';
 
 const db = {};
+// const sequelize = new Sequelize(
+//   config.database, config.username, config.password, config,
+// );
 const sequelize = new Sequelize({
   dialect: 'sqlite', 
   storage: path.join(__dirname, '..', '..', 'database.db')
