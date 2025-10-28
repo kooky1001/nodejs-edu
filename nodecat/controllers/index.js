@@ -73,3 +73,7 @@ exports.test = async (req, res, next) => { // 토큰 테스트 라우터
     return next(error);
   }
 };
+
+exports.renderMain = (req, res) => {
+  res.render('main', { key: process.env.CLIENT_SECRET || 'testKey' });
+};
