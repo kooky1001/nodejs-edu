@@ -20,7 +20,7 @@ exports.createToken = async (req, res) => {
     const token = jwt.sign({
       id: domain.User.id,
       nick: domain.User.nick,
-    }, process.env.JWT_SECRET, {
+    }, process.env.JWT_SECRET || 'jwtSecret', {
       expiresIn: '1m', // 1분
       issuer: 'nodebird',
     });
