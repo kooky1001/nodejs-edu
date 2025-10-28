@@ -1,6 +1,7 @@
 const axios = require('axios');
 
-const URL = process.env.API_URL || 'http://localhost:3002/v1';
+// const URL = process.env.API_URL || 'http://localhost:3002/v1';
+const URL = process.env.API_URL || 'http://localhost:3002/v2';
 axios.defaults.headers.origin = process.env.ORIGIN || 'http://localhost:3003'; // origin 헤더 추가
 
 const request = async (req, api) => {
